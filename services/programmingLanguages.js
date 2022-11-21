@@ -8,6 +8,9 @@ async function getMultiple() {
     };
 };
 
+async function addSingle() {
+    const data = await db.query('INSERT INTO programming_languages (name, released_year, githut_rank, pypl_rank, tiobe_rank) VALUES ("will-speak", 1993, 1, 2, 3)');
+};
 
 
-module.exports = { getMultiple };
+module.exports = { getMultiple, addSingle };

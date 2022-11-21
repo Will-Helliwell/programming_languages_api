@@ -12,4 +12,13 @@ router.get('/', async function(req, res, next) {
     }
 });
 
+router.post('/', async function(req, res, next) {
+    try {
+        res.json(await programming_languages.addSingle());
+    } catch (err) {
+        console.error('Error while adding a programming language: ', err.message)
+        next(err);
+    }
+});
+
 module.exports = router;
